@@ -1,0 +1,17 @@
+public class BraceChecker {
+
+  public boolean isValid(String braces) {
+      String temp = "";
+      while (braces.length() != 0) {
+        temp = braces.replace("{}", "").replace("()", "").replace("[]", "");
+        if (temp.length() == braces.length()) {
+          break;
+        }
+        braces = temp;
+      }
+      if (temp.length() == 0) {
+        return true;
+      }
+      return false;
+    }
+}

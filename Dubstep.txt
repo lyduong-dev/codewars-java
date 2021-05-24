@@ -1,0 +1,10 @@
+public class Dubstep {
+  public static String SongDecoder (String song)
+  {
+    song = song.replace("WUB", " ").trim();
+    while (song.indexOf("  ") > 0) {
+      song = song.replace("  ", " ");
+    }
+    return song;
+  }
+}

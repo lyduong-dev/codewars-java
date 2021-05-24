@@ -1,0 +1,13 @@
+class Solution {
+  public static String camelCase(String input) {
+      String uppercaseInput = input.toUpperCase();
+      String result = "";
+      for (int i = 0; i < input.length(); i++) {
+          if (uppercaseInput.charAt(i) == input.charAt(i)) {
+            result += " ";
+          }
+          result += input.charAt(i);
+      }
+      return result;
+  }
+}

@@ -1,0 +1,25 @@
+public class FindOutlier{
+  static int find(int[] integers){
+    int oddIndex = -1, evenIndex = -1, status = 0;
+    for(int i = 0; i < integers.length; i++) {
+      if (integers[i] % 2 == 0) {
+          if (oddIndex != -1) {
+            status = 1;
+          }
+          oddIndex = i;
+      } else {
+          if (evenIndex != -1) {
+            status = 2;
+          }
+          evenIndex = i;
+      }
+      
+      if (status == 1 && evenIndex != -1) {
+          return integers[evenIndex];
+      } else if(status == 2 && oddIndex != -1) {
+          return integers[oddIndex];
+      }
+    }
+    return 0;
+  }
+}
